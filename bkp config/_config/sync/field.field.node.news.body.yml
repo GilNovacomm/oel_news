@@ -1,0 +1,25 @@
+uuid: 58126e69-d7fd-4cc5-8ab0-4f10a8fa4dee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.news
+  module:
+    - text
+_core:
+  default_config_hash: 7l3COVmaqoAlFCya9PPS3Vv8SYN5iXBq2VkQCI14FJE
+id: node.news.body
+field_name: body
+entity_type: node
+bundle: news
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,151 @@
+uuid: 8016d266-4434-4b15-814a-aa49489c5cfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.news.body
+    - field.field.node.news.field_news_metadata
+    - field.field.node.news.field_news_publication_date
+    - field.field.node.news.field_oel_news_featured_media
+    - field.field.node.news.field_oel_news_introduction
+    - field.field.node.news.layout_builder__layout
+    - node.type.news
+  module:
+    - field_layout
+    - layout_builder
+    - text
+    - user
+    - viewfield
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Search Index cards'
+          column_widths: 25-75
+        components:
+          e4408c89-0be3-4e1d-bf4a-5122612cd571:
+            uuid: e4408c89-0be3-4e1d-bf4a-5122612cd571
+            region: second
+            configuration:
+              id: 'field_block:node:news:field_news_metadata'
+              label: Metadata
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: viewfield_default
+                settings:
+                  view_title: hidden
+                  always_build_output: false
+                  empty_view_title: hidden
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          e9d381b1-8597-466e-accb-cb70efe3940e:
+            uuid: e9d381b1-8597-466e-accb-cb70efe3940e
+            region: second
+            configuration:
+              id: 'field_block:node:news:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          b3ca2865-b129-4f8e-b9a1-059679e90b63:
+            uuid: b3ca2865-b129-4f8e-b9a1-059679e90b63
+            region: second
+            configuration:
+              id: 'field_block:node:news:field_oel_news_introduction'
+              label: Introduction
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: plain_string_formatter
+                settings:
+                  link_to_entity: false
+                  wrap_tag: _none
+                  wrap_class: hide-mobile
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+          8e02fee3-89b2-426d-a485-f8dd1894147d:
+            uuid: 8e02fee3-89b2-426d-a485-f8dd1894147d
+            region: first
+            configuration:
+              id: 'field_block:node:news:field_oel_news_featured_media'
+              label: 'Featured media'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: media_thumbnail
+                settings:
+                  image_style: thumbnail
+                  image_link: content
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: Omf1v8fXi82vL_9ARsWaPnFVqV8VpGT_ZuWoFpjzp8g
+id: node.news.search_index
+targetEntityType: node
+bundle: news
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_news_metadata:
+    weight: 9
+    label: above
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+  links:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_news_publication_date: true
+  field_oel_news_featured_media: true
+  field_oel_news_introduction: true
+  langcode: true
+  layout_builder__layout: true
