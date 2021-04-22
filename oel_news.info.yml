@@ -20,7 +20,7 @@ dependencies:
   - drupal:layout_builder
   - drupal:layout_discovery
   - drupal:field_layout
-  - viewfield:viewfield
+  - mini_layouts:mini_layouts
   - field_permissions:field_permissions
   - string_field_formatter:string_field_formatter
   - text_field_formatter:text_field_formatter

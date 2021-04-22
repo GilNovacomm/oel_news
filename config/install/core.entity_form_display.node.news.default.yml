@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
-    - field.field.node.news.field_news_metadata
     - field.field.node.news.field_news_publication_date
     - field.field.node.news.field_oel_news_featured_media
     - field.field.node.news.field_oel_news_introduction
@@ -114,5 +113,4 @@ content:
     region: content
     third_party_settings: {  }
 hidden:
-  field_news_metadata: true
   layout_builder__layout: true

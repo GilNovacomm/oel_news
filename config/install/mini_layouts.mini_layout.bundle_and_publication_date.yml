@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bundle_and_publication_date
+admin_label: 'Bundle and Publication date'
+category: 'Content Metadata'
+required_context:
+  content:
+    label: Content
+    machine_name: content
+    type: 'entity:node'
+    required: true
+sections:
+  -
+    layout_id: layout_twocol_section
+    layout_settings:
+      label: Metadata
+      column_widths: 50-50
+    components:
+      9212981f-31f6-4386-9864-012bf66b8f6c:
+        uuid: 9212981f-31f6-4386-9864-012bf66b8f6c
+        region: first
+        configuration:
+          id: 'field_block:node:news:type'
+          label: 'Content type'
+          provider: layout_builder
+          label_display: '0'
+          formatter:
+            label: hidden
+            type: entity_reference_label
+            settings:
+              link: false
+            third_party_settings: {  }
+          context_mapping:
+            entity: content
+        additional: {  }
+        weight: 0
+      d4b0d97b-a7c4-4047-beec-a3d0f5061b69:
+        uuid: d4b0d97b-a7c4-4047-beec-a3d0f5061b69
+        region: second
+        configuration:
+          id: 'field_block:node:news:field_news_publication_date'
+          label: 'Publication date'
+          provider: layout_builder
+          label_display: '0'
+          formatter:
+            label: hidden
+            type: datetime_custom
+            settings:
+              timezone_override: ''
+              date_format: 'd M Y'
+            third_party_settings: {  }
+          context_mapping:
+            entity: content
+        additional: {  }
+        weight: 0
+    third_party_settings: {  }
+locked: null

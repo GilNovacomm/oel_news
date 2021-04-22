@@ -7,11 +7,12 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.2",
+        "cweagans/composer-patches": "~1.0",
         "drupal/core": "^8.7",
         "drupal/field_permissions": "^1.1",
+        "drupal/mini_layouts": "1.x-dev@dev",
         "drupal/string_field_formatter": "^2.0",
-        "drupal/text_field_formatter": "^2.0",
-        "drupal/viewfield": "^3.0@beta"
+        "drupal/text_field_formatter": "^2.0"
     },
     "require-dev": {
         "composer/installers": "~1.5",
@@ -47,6 +48,11 @@
         }
     },
     "extra": {
+        "patches": {
+            "drupal/core": {
+                "#3001313 - Layout Builder context" : "https://www.drupal.org/files/issues/2020-02-13/3001313--63.patch"
+            }
+        },
         "composer-exit-on-patch-failure": true,
         "enable-patching": true,
         "installer-paths": {

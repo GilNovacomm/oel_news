@@ -4,7 +4,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.cards
     - field.field.node.news.body
-    - field.field.node.news.field_news_metadata
     - field.field.node.news.field_news_publication_date
     - field.field.node.news.field_oel_news_featured_media
     - field.field.node.news.field_oel_news_introduction
@@ -15,7 +14,6 @@ dependencies:
     - layout_builder
     - text
     - user
-    - viewfield
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -120,16 +118,6 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_news_metadata:
-    weight: 9
-    label: above
-    settings:
-      view_title: hidden
-      always_build_output: false
-      empty_view_title: hidden
-    third_party_settings: {  }
-    type: viewfield_default
     region: content
   links:
     weight: 2
